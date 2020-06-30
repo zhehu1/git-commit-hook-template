@@ -4,13 +4,22 @@
   "description": "\"# git-commit-hook-template\"",
   "main": "index.js",
   "scripts": {
+    "init-project": "npm install && npm install -g commitizen git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "git-cz": "^4.7.0",
+    "husky": "^4.2.5"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "git": "https://github.com/vu-ji/git-commit-hook-template",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -19,10 +28,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^9.0.1",
-    "husky": "^4.2.5"
-  },
-  "dependencies": {}
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
 }
